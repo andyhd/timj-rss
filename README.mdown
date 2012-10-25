@@ -8,7 +8,7 @@ This simple Flask app converts the TIMJ JSON list of your jams to an RSS2 feed.
 Using this
 ----------
 
-First set up a virtualenv:
+First set up a virtualenv (I usually have this in a subdirectory called venv):
 
     virtualenv venv
     source venv/bin/activate
