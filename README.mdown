@@ -1,0 +1,23 @@
+RSS Feed generator for thisismyjam
+==================================
+
+TIMJ haven't finished their API yet, but I wanted to post my jams on my Tumblr using IFTTT.
+
+This simple Flask app converts the TIMJ JSON list of your jams to an RSS2 feed.
+
+Using this
+----------
+
+First set up a virtualenv:
+
+    virtualenv venv
+    source venv/bin/activate
+
+Then use pip to install the dependencies:
+
+    pip install -r requirements.txt
+
+Then run the app with gunicorn:
+
+    gunicorn -w 4 jams:app
+
