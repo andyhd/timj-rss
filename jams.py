@@ -18,11 +18,11 @@ app = Flask(__name__)
 
 def makeItem(jam):
     return PyRSS2Gen.RSSItem(
-      title = jam['artist'] + ' - ' + jam['title'],
-      link = jam.get('viaUrl', jam['url']),
-      description = jam['caption'],
-      guid = PyRSS2Gen.Guid(jam['url']),
-      pubDate = datetime.datetime.strptime(jam['creationDate'], "%a, %d %b %Y %H:%M:%S +0000"))
+        title = jam['artist'] + ' - ' + jam['title'],
+        link = jam.get('viaUrl', jam['url']),
+        description = jam['caption'],
+        guid = PyRSS2Gen.Guid(jam['url']),
+        pubDate = datetime.datetime.strptime(jam['creationDate'], "%a, %d %b %Y %H:%M:%S +0000"))
 
 @app.route('/jams.rss')
 def jams():
@@ -31,11 +31,11 @@ def jams():
         data = json.loads(''.join(feed.readlines()))
         items = [makeItem(jam) for jam in data['jams']]
     rss = PyRSS2Gen.RSS2(
-      title = feed_title,
-      link = feed_link,
-      description = feed_description,
-      lastBuildDate = datetime.datetime.now(),
-      items = items)
+        title = feed_title,
+        link = feed_link,
+        description = feed_description,
+        lastBuildDate = datetime.datetime.now(),
+        items = items)
     return Response(rss.to_xml(), mimetype='application/rss+xml')
 
 if __name__ == '__main__':
