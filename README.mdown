@@ -21,3 +21,4 @@ Then run the app with gunicorn:
 
     gunicorn -w 4 jams:app
 
+You should be able to access your RSS feed at http://localhost:8000/
